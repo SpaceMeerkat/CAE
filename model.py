@@ -3,14 +3,14 @@ import torch
 
 def weight_init(m):
     if isinstance(m, torch.nn.Conv2d) or isinstance(m, torch.nn.Linear):
-        torch.nn.init.xavier_uniform(m.weight.data)
+        torch.nn.init.xavier_uniform_(m.weight.data)
         m.bias.data.zero_()
 
 
-class Net(torch.nn.Module):
+class RegressionNet(torch.nn.Module):
 
     def __init__(self):
-        super(Net, self).__init__()
+        super().__init__()
         self.feature_extractor = torch.nn.Sequential(
             torch.nn.Conv2d(1, 64, 5, padding=2),
             torch.nn.ReLU(),
@@ -53,4 +53,34 @@ class Net(torch.nn.Module):
         features = self.feature_extractor(x)
         output = self.classifier(features.view(int(x.size()[0]), -1))
         # output= F.log_softmax(output,dim=1) # Give results using softmax
+        return output
+		
+class CategoricalNet(torch.nn.Module):
+    
+    def __init__(self):
+        super().__init__()
+        self.feature_extractor = torch.nn.Sequential(
+            
+            torch.nn.Conv2d(1,64,5,padding=2), # 1 input, 32 out, filter size = 5x5, 2 block outer padding
+            torch.nn.ReLU(),
+            torch.nn.Conv2d(64,128,5,padding=2),
+            torch.nn.ReLU(),
+            torch.nn.BatchNorm2d(128),
+            torch.nn.MaxPool2d(2),
+            torch.nn.Conv2d(128,256,5,padding=2),
+            torch.nn.ReLU(),
+            torch.nn.BatchNorm2d(256),
+            torch.nn.MaxPool2d(2))
+ 
+        self.classifier = torch.nn.Sequential(
+		    torch.nn.Dropout(0.25),
+            torch.nn.Linear(256*16*16,256), # Fully connected layer 
+            torch.nn.ReLU(),
+            torch.nn.Dropout(0.25),
+            torch.nn.Linear(256,9))
+        
+    def forward(self,x):
+        features = self.feature_extractor(x)
+#        output = self.classifier(features.view(int(x.size()[0]),-1))
+        output = self.classifier(features.view(int(x.size()[0]),-1)) # Give results using softmax
         return output

@@ -27,11 +27,14 @@ def make_dataset(dir):
 def default_fits_loader(file_name: str, img_size: tuple, slice_index):
     file = fits.open(file_name)
     _data = file[1].data
-    _data = resize(_data[slice_index], img_size)
+    _data = resize(_data[slice_index], img_size, mode='reflect')
     _label = file[0].header['LABEL']
 
     if len(_data.shape) < 3:
         _data = _data.reshape((*_data.shape, 1))
+		
+	# set all NaN values to zero
+    _data[_data != _data] = 0
 
     return _data, _label
 
