@@ -26,7 +26,7 @@ from sklearn.metrics import confusion_matrix
 
 ### LOADING IN THE DATA
 
-path = '/home/jamesdawson/Documents/'
+path = '/home/Documents/'
 df = pd.read_pickle(path+'features_train.pkl')
 features = df.values[:,:-1]
 labels_train = df.values[:,-1]
