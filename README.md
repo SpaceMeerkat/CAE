@@ -6,7 +6,7 @@ Using the pre-trained [convolutional autoencoder](https://github.com/SpaceMeerka
 
 1. The circularity- defined as the amount of kinetic enrgy invested in flat circular rotation of a galaxy and thus the degree of kinematic disorder.
 
-2. The galaxy position angle with an uncertainty of ~20% (dependant on the inclination).
+2. The galaxy position angle with an uncertainty of ~20% (depending on the inclination).
 
 ## **Implementation information** 
 
