@@ -1,6 +1,6 @@
-# ** A Machine Learning Approach for Studying Galaxy Kinematics with ALMA in Preparation for the SKA **
+# **A Machine Learning Approach for Studying Galaxy Kinematics with ALMA in Preparation for the SKA**
 
-## ** Using a convolutional autoencoder to return the level of ordered rotation of a galaxy **
+## **Using a convolutional autoencoder to return the level of ordered rotation of a galaxy**
 
 Using the pre-trained [convolutional autoencoder](https://github.com/SpaceMeerkat/CAE/blob/master/Kinematics_Tester_Files/CAE_Epoch_300.pt), users can quickly output the latent positions of galaxies and recover the following information:
 
