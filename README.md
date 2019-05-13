@@ -1,5 +1,7 @@
 # **A Machine Learning Approach for Studying Galaxy Kinematics with ALMA in Preparation for the SKA**
 
+This repository contains a set of Python scripts detailing a model for classifying galaxies as either kinematically disturbed, or disk-like and orderly rotating objects. The primary goal is that such a model can be used, or built upon, in order to maximise the number of irregular objects flagged by SKA in the future to ascertain cosmological truths (such as the merger rate of the universe at a given redshift) and aid current surveys involving kinematic modelling by returning fast predictions of galaxy properties.   
+ 
 ## **Using a convolutional autoencoder to return the level of ordered rotation of a galaxy**
 
 Using the pre-trained [convolutional autoencoder](https://github.com/SpaceMeerkat/CAE/blob/master/Kinematics_Tester_Files/CAE_Epoch_300.pt), users can quickly output the latent  (CAE) positions of galaxies and recover the following information:
