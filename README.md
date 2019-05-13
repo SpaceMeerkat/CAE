@@ -19,10 +19,10 @@ Other dependencies:
 * [Python v3.5 or later](https://www.python.org/)
 * [PyTorch v1.1](https://pytorch.org/)
 * [Astropy v3.1.2](https://www.astropy.org/)
-* [numpy v1.16.2](https://www.numpy.org/)
+* [NumPy v1.16.2](https://www.numpy.org/)
 
 Additional optional dependencies:
 
-* [pandas v0.24.2](https://pandas.pydata.org/)
+* [Pandas v0.24.2](https://pandas.pydata.org/)
 
 
