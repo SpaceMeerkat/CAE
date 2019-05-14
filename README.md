@@ -25,4 +25,4 @@ Additional optional dependencies:
 
 * [Pandas v0.24.2](https://pandas.pydata.org/)
 
-
+To use the model, one should alter the **example_script.py** file so that the paths to the model pt file and relevant modules in **testing_modules.py** are correctly imported. The example script also outputs a pandas DataFrame to a .pkl file should the user wish to save their results. 
