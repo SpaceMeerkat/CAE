@@ -18,8 +18,8 @@ Other **dependencies**:
 
 * [Python v3.5 or later](https://www.python.org/)
 * [PyTorch v1.1](https://pytorch.org/)
-* [Astropy v3.1.2](https://www.astropy.org/)
 * [NumPy v1.16.2](https://www.numpy.org/)
+* [Astropy v3.1.2](https://www.astropy.org/)
 
 Additional optional dependencies:
 
