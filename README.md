@@ -14,7 +14,7 @@ Using the pre-trained [convolutional autoencoder](https://github.com/SpaceMeerka
 
 The CAE has been created and trained using the [PyTorch](https://pytorch.org/) platform. In order to use the model, the user will be required to have PyTorch installed but the use of GPU capabilities is not a requirement.
 
-Other dependencies:
+Other **dependencies**:
 
 * [Python v3.5 or later](https://www.python.org/)
 * [PyTorch v1.1](https://pytorch.org/)
@@ -26,3 +26,9 @@ Additional optional dependencies:
 * [Pandas v0.24.2](https://pandas.pydata.org/)
 
 To use the model, one should alter the **example_script.py** file so that the paths to the model pt file and relevant modules in **testing_modules.py** are correctly imported. The example script also outputs a pandas DataFrame to a .pkl file should the user wish to save their results. 
+
+## **Breakdown of the repository structure**
+
+-The [Kinematics_Tester_Files](https://github.com/SpaceMeerkat/CAE/tree/master/Kinematics_Tester_Files) folder contains example scripts for using the CAE model.
+
+-The [Test_FITS_files](https://github.com/SpaceMeerkat/CAE/tree/master/Test_FITS_files) folder has a selection of 30 ALMA velocity maps that can be used with the model for testing purposes. For more information on the galaxies used please read the corresponding journal papers [Zabel et al. 2019](https://academic.oup.com/mnras/article/483/2/2251/5218520) and [WISDOM project](https://academic.oup.com/mnras/article/468/4/4663/3072185).
