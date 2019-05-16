@@ -29,6 +29,6 @@ To use the model, one should alter the **example_script.py** file so that the pa
 
 ## **Breakdown of the repository structure**
 
--The [Kinematics_Tester_Files](https://github.com/SpaceMeerkat/CAE/tree/master/Kinematics_Tester_Files) folder contains example scripts for using the CAE model.
+- The [Kinematics_Tester_Files](https://github.com/SpaceMeerkat/CAE/tree/master/Kinematics_Tester_Files) folder contains example scripts for using the CAE model.
 
--The [Test_FITS_files](https://github.com/SpaceMeerkat/CAE/tree/master/Test_FITS_files) folder has a selection of 30 ALMA velocity maps that can be used with the model for testing purposes. For more information on the galaxies used please read the corresponding journal papers [Zabel et al. 2019](https://academic.oup.com/mnras/article/483/2/2251/5218520) and [WISDOM project](https://academic.oup.com/mnras/article/468/4/4663/3072185).
+- The [Test_FITS_files](https://github.com/SpaceMeerkat/CAE/tree/master/Test_FITS_files) folder has a selection of 30 ALMA velocity maps that can be used with the model for testing purposes. For more information on the galaxies used please read the corresponding journal papers [Zabel et al. 2019](https://academic.oup.com/mnras/article/483/2/2251/5218520) and [WISDOM project](https://academic.oup.com/mnras/article/468/4/4663/3072185).
