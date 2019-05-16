@@ -1,4 +1,4 @@
-# **A Machine Learning Approach for Studying Galaxy Kinematics with ALMA in Preparation for the SKA**
+# **ALMA/SKA Machine Learning Pipeline Tool**
 
 This repository contains a set of Python scripts detailing a model for classifying galaxies as either kinematically disturbed, or disk-like and orderly rotating objects. The primary goal is that such a model can be used, or built upon, in order to maximise the number of irregular objects flagged by SKA in the future to ascertain cosmological truths (such as the merger rate of the universe at a given redshift) and aid current surveys involving kinematic modelling by returning fast predictions of galaxy properties.   
  
@@ -25,4 +25,4 @@ Additional optional dependencies:
 
 * [Pandas v0.24.2](https://pandas.pydata.org/)
 
-
+To use the model, one should alter the **example_script.py** file so that the paths to the model pt file and relevant modules in **testing_modules.py** are correctly imported. The example script also outputs a pandas DataFrame to a .pkl file should the user wish to save their results. 
