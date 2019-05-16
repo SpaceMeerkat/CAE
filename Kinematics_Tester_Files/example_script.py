@@ -8,30 +8,24 @@ Created on Mon May 13 09:31:52 2019
 #///   Load the required packages   //////////////////////////////////////////#
 #=============================================================================#
 
-import torch
+import os
+
 import numpy as np
+import torch
+import pandas as pd
 from torch.utils.data import DataLoader
 from tqdm import tqdm
-import pandas as pd
 
-from Testing_modules import FITSCubeDataset
-
-#=============================================================================#
-#///   Load the data and test   //////////////////////////////////////////////#
-#=============================================================================#
-
-""" Define the paths to your velocity maps and the CAE model path """
-
-_data_path = '/home/user/Documents/data/'
-_model_path = '/home/user/Documents/model/'
+from config import *
+from modules import FITSCubeDataset
 
 #=============================================================================#
-#/////////////////////////////////////////////////////////////////////////////#
+#///   Load the data and begin testing   /////////////////////////////////////#
 #=============================================================================#
 
-""" Load the CAE model and set it to evaluation mode """
+""" Load the CAE model and set it to evaluation mode on a cpu device """
 
-model = torch.load(_model_path+'CAE.pt').cpu()
+model = torch.load(MODEL_PATH,map_location='cpu').cpu()
 model.train(False)
 
 #=============================================================================#
@@ -41,7 +35,7 @@ model.train(False)
 """ Load the data using a given batch size (default=64) and given number of 
 workers (default=16) """
 
-test_loader = DataLoader(dataset=FITSCubeDataset(_data_path),
+test_loader = DataLoader(dataset=FITSCubeDataset(DATA_PATH),
                           batch_size=64,num_workers=16,shuffle=True)      
                           
 #=============================================================================#
@@ -74,7 +68,7 @@ results.columns = ['Name','L1','L2','L3']
 results.set_index(keys='Name',drop=True,inplace=True)
 
 _save_path = '/home/user/Documents/results/'
-results.to_pickle(_save_path+'CAE_results.pkl')
+results.to_pickle(os.path.join(SAVE_PATH,'CAE_results.pkl'))
 
 #=============================================================================#
 #///   End of script   ///////////////////////////////////////////////////////#
