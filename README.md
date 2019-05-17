@@ -33,6 +33,25 @@ $pip3 install -r requirements.txt
 
 To use the model, one should alter the **example_script.py** file so that the paths to the model pt file and relevant modules in **testing_modules.py** are correctly imported. The example script also outputs a pandas DataFrame to a .pkl file should the user wish to save their results. 
 
+example_script.py will run out-of-the-box by using the following command from a terminal shell within the Kinematics_Tester_Files folder:
+
+```
+$python3 example_script.py
+```
+
+The default output of example_script.py is a pandas DataFrame with all 3 latent positions of all input velocity maps as well as a prediction of the galaxies' circularity values. 
+
+```
+                       L1           L2          L3 Circularity
+Name                                                          
+NGC1380        -4.2929926   -14.941876   12.846045         1.0
+ESO359-G002     7.7088847    -9.553634   10.178327         0.0
+NGC1436         10.838033    -7.580992    5.949612         1.0
+NGC1387         2.8304605   -22.606302  -0.7115479         1.0
+NGC1194         11.064097   -6.6387653   3.4034176         1.0
+NGC0404         10.964644    -8.554581     8.61254         0.0
+```
+
 ## **Breakdown of the repository structure**
 
 - The [Kinematics_Tester_Files](https://github.com/SpaceMeerkat/CAE/tree/master/Kinematics_Tester_Files) folder contains example scripts for using the CAE model.
