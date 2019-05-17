@@ -25,7 +25,9 @@ model results to alternative directories, change the following paths:
 
 DATA_PATH = '../Test_FITS_files/'
 MODEL_PATH = 'CAE_Epoch_300.pt'
-SAVE_PATH = '../'
+SAVE_PATH = '../Results/'
+PCA_PATH = 'PCA_routine.pkl'
+BOUNDARY = 2.960960960960961
 
 #=============================================================================#
 #///   END OF SCRIPT   ///////////////////////////////////////////////////////#

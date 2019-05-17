@@ -59,15 +59,36 @@ all_names = np.hstack(all_names)
 #/////////////////////////////////////////////////////////////////////////////#
 #=============================================================================#
 
+""" Load the PCA routine and transform the 3D latent data for making 
+    predictions of circularity """
+
+with open(PCA_PATH, 'rb') as file:  
+    PCA_model = pickle.load(file)
+    
+pca_test_data = PCA_model.transform(all_features)
+
+#=============================================================================#
+#/////////////////////////////////////////////////////////////////////////////#
+#=============================================================================#
+
+""" Get a circularity prediction from the 3D latent positions """
+
+latent_x = np.sqrt((pca_test_data[:,0]**2)+(pca_test_data[:,1]**2))
+latent_y = np.abs(pca_test_data[:,2])
+classifications = np.ones(len(latent_x))
+zero_indices = np.where(latent_x<BOUNDARY)[0]
+classifications[zero_indices] = 0
+
+#=============================================================================#
+#/////////////////////////////////////////////////////////////////////////////#
+#=============================================================================#
+
 """ Optional: Store the results as a DataFrame and pickle """
 
-df_data = np.vstack([all_names,all_features.T]).T
-
+df_data = np.vstack([all_names,all_features.T,classifications]).T
 results = pd.DataFrame(df_data)
-results.columns = ['Name','L1','L2','L3']
+results.columns = ['Name','L1','L2','L3','Circularity']
 results.set_index(keys='Name',drop=True,inplace=True)
-
-_save_path = '/home/user/Documents/results/'
 results.to_pickle(os.path.join(SAVE_PATH,'CAE_results.pkl'))
 
 #=============================================================================#
