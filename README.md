@@ -39,7 +39,7 @@ example_script.py will run out-of-the-box by using the following command from a 
 $python3 example_script.py
 ```
 
-The default output of example_script.py is a pandas DataFrame with all 3 latent positions of all input velocity maps as well as a prediction of the galaxies' circularity values. 
+The default output of example_script.py is a pandas DataFrame with all 3 latent positions of all input velocity maps as well as a prediction of the galaxies' circularity values. The DataFrame is pickled as "CAE_results.pkl" and is saved in the "Results" folder of the copied repository file structure.
 
 ```
                        L1           L2          L3 Circularity
