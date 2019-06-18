@@ -28,18 +28,24 @@ Additional optional dependencies:
 To install the dependencies simply run the following command from inside the repo folder destination:
 
 ```
-$pip3 install -r requirements.txt
+$pip install -e .
 ```
 
-To use the model, one should alter the **example_script.py** file so that the paths to the model pt file and relevant modules in **testing_modules.py** are correctly imported. The example script also outputs a pandas DataFrame to a .pkl file should the user wish to save their results. 
+To use the model, one should run `python -m spacemerlin.scripts.run` and can specify the following parameters:
 
-example_script.py will run out-of-the-box by using the following command from a terminal shell within the Kinematics_Tester_Files folder:
+* `--modelpath` (`-m`): Should contain a string pointing to a file including the checkpoint to load. Per default this will point to the checkpoint we provide.
 
-```
-$python3 example_script.py
-```
+* `--datapath` (`-d`): Should contain a string pointing to a directory including the files to predict. Per default this will point to the exemplaric FITS files included in this package.
 
-The default output of example_script.py is a pandas DataFrame with all 3 latent positions of all input velocity maps as well as a prediction of the galaxies' circularity values. The DataFrame is pickled as "CAE_results.pkl" and is saved in the "Results" folder of the copied repository file structure.
+* `--pcapath` (`-p`): Should contain a string pointing to a file including the saved PCA (as pickle). Per default this will point to the provided PCA.
+
+* `--boundary` (`-b`): Should contain a float specifying the upper boundary for valid latent x values. Defaults to the value of `2.960960960960961`
+
+* `--savepath` (`-s`): Should contain a string pointing to a (already existant) directory, where the dataframe should be saved. Defaults to the value of `None`, which results in no filedumping but only a returned dataframe.
+
+The example script also outputs a pandas DataFrame to a .pkl file should the user wish to save their results. 
+
+The default output of run.py is a pandas DataFrame with all 3 latent positions of all input velocity maps as well as a prediction of the galaxies' circularity values. The DataFrame is pickled as "CAE_results.pkl" and provided within the repository.
 
 ```
                        L1           L2          L3 Circularity
