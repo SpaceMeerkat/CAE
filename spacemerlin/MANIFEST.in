@@ -1,0 +1,6 @@
+include *.txt
+include *.md
+include LICENSE
+include *.fits
+include *.pkl
+include *.pt
